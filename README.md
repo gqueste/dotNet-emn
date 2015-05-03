@@ -49,6 +49,10 @@ L'utilisateur remplit des informations sur le paiement, puis confirme.
 
 Récapitulatif de la commande effectuée
 
+### Page 5-bis : Annulation de la commande ###
+
+Possibilité pour l'utilisateur d'annuler sa commande 
+
 ## SQL ##
 
 * VOLS (lecture)
