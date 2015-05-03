@@ -4,6 +4,17 @@ Hadrien GERARD, Damien GOUJARD, Maxime PEROCHEAU, Joris PICHARD, Gabriel QUESTE
 
 ## User Story ##
 
+### Page 0 : Création d'un compte ou authentification de l'utilisateur ###
+
+L'utilisateur, s'il possède un compte, se connecte. Dans le cas contraire, il doit créer un compte via un formulaire.
+
+Champs :
+
+*Nom
+*Prénom
+*Email
+*Mot de passe
+
 ### Page 1 : Saisie du voyage ###
 
 L'utilisateur replit un formulaire sur le voyage qu'il veut réserver.
