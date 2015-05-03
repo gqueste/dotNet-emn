@@ -51,7 +51,10 @@ Récapitulatif de la commande effectuée
 
 ### Page 5-bis : Annulation de la commande ###
 
-Possibilité pour l'utilisateur d'annuler sa commande 
+Possibilité pour l'utilisateur d'annuler sa commande.
+Une popup de confirmation apparaît et l'écran des commandes est rafraîchi.
+
+**Lors de l'affichage de la popup, la suppression de la réservation est propagée en base.**
 
 ## SQL ##
 
