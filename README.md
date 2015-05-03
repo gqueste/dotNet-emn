@@ -10,10 +10,10 @@ L'utilisateur, s'il possède un compte, se connecte. Dans le cas contraire, il d
 
 Champs :
 
-*Nom
-*Prénom
-*Email
-*Mot de passe
+* Nom
+* Prénom
+* Email
+* Mot de passe
 
 ### Page 1 : Saisie du voyage ###
 
