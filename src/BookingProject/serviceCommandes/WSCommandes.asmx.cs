@@ -17,15 +17,17 @@ namespace serviceCommandes
     public class WSCommandes : System.Web.Services.WebService
     {
 
+        private lib_Commandes.clsCommandes commandes;
+
         public WSCommandes()
         {
-            //Paramètres que l'on veut dans le constructeur
+            this.commandes = new lib_Commandes.clsCommandes();
         }
 
         [WebMethod]
-        public string reservation(int idVol, int idHotel, DateTime date, string nomUtilisateur)
+        public void reservation(int idVol, int idHotel, DateTime date, string nomUtilisateur)
         {
-            return "récapitulatif réservation ?";
+            this.commandes.reservation(idVol,idHotel,date,nomUtilisateur);
         }
     }
 }
