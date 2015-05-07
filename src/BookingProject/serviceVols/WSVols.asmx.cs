@@ -16,39 +16,37 @@ namespace serviceVols
     // [System.Web.Script.Services.ScriptService]
     public class WSVols : System.Web.Services.WebService
     {
-        // Déclarer la librairie et y faire référence
+        private lib_Vols.clsVols vols;
 
         public WSVols()
         {
-            // Paramètres que l'on veut dans le constructeur
+            this.vols = new lib_Vols.clsVols();
 
         }
 
         [WebMethod]
-        public List<string> getVolsDisponibles(string villeDepart, string villeArrivee, DateTime date)
+        public List<lib_Vols.resVol> getVolsDisponibles(string villeDepart, string villeArrivee, DateTime date)
         {
-            // A voir si on met un Dataset ou si on garde la liste de strings
-            // Pour que ça marche pour l'instant
-            return new List<string>();
+
+            return this.vols.getVolsDisponibles(villeDepart, villeArrivee, date);
         }
 
         [WebMethod]
-        public string getVol(int idVol)
+        public lib_Vols.resVol getVol(int idVol)
         {
-            // A voir pour le type du retour
-            return "le vol demandé";
+            return this.vols.getVol(idVol);
         }
 
         [WebMethod]
         public List<string> getVillesDepart()
         {
-            return new List<string>();
+            return this.vols.getVillesDepart();
         }
 
         [WebMethod]
         public List<string> getVillesArrivee()
         {
-            return new List<string>();
+            return this.vols.getVillesArrivee();
         }
     }
 }
