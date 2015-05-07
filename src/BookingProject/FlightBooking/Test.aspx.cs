@@ -35,7 +35,7 @@ namespace FlightBooking
                   pnldynamic.Controls.Add(new LiteralControl("<br />"));
               }
 
-            DemandeVol demande = Session["demandeVol"] as DemandeVol;
+            /*DemandeVol demande = Session["demandeVol"] as DemandeVol;
 
             if (demande != null)
             {
@@ -45,7 +45,7 @@ namespace FlightBooking
                 lblDemandeDate.Visible = true;
                 lblVilleDepart.Visible = true;
                 lblVilleArrivee.Visible = true;
-            }
+            }*/
 
         }
 
