@@ -60,14 +60,14 @@ namespace FlightBooking
 
         protected void btnConfirmer_Click(object sender, EventArgs e)
         {
-            var demande = new DemandeVol() {
+            /*var demande = new DemandeVol() {
                 dateDepart = Calendar.SelectedDate,
                 villeDepart =ListBox1.SelectedValue,
                 villeArrivee = ListBox2.SelectedValue
             };
 
             Session.Add("demandeVol", demande);
-            Response.Redirect("~/Test.aspx", true);
+            Response.Redirect("~/Test.aspx", true);*/
         }
     }
 }
