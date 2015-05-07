@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.EnterpriseServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -17,7 +18,9 @@ using System.Runtime.InteropServices;
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
+[assembly: ApplicationActivation(ActivationOption.Server)]
+[assembly: ApplicationName("FlightBooking")]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("3a01143d-a7d9-4f74-bb42-d2fa0c593c85")]
