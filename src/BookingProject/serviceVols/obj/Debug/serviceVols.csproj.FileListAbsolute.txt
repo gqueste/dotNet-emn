@@ -1,6 +1,0 @@
-C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceVols\bin\serviceVols.dll.config
-C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceVols\bin\serviceVols.dll
-C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceVols\bin\serviceVols.pdb
-C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceVols\obj\Debug\serviceVols.dll
-C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceVols\obj\Debug\serviceVols.pdb
-C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceVols\obj\Debug\serviceVols.csprojResolveAssemblyReference.cache
