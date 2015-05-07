@@ -9,10 +9,9 @@ using System.EnterpriseServices;
 
 namespace lib_Hotels
 {
-    [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
-    public class clsHotels
+    public class clsHotels: ServicedComponent
     {
-         [AutoComplete]
+        [AutoComplete]
         public List<resHotel> getHotelsDisponibles(String ville)
         {
             List<resHotel> ret = new List<resHotel>();

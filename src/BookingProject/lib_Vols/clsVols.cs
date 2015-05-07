@@ -9,7 +9,6 @@ using System.EnterpriseServices;
 
 namespace lib_Vols
 {
-    [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsVols : ServicedComponent
     {
         [AutoComplete]
