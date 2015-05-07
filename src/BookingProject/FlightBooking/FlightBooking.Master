@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FlightBooking.master.cs" Inherits="FlightBooking.FlightBooking" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Projet .Net EMN - FIL A2"/>
+    <meta name="author" content="Hadrien GERARD, Damien GOUJARD, Maxime PEROCHEAU, Joris PICHARD, Gabriel QUESTE"/>
+    <link rel="icon" href="favicon.ico" />
+
+    <title>FlightBooking : <%: (String.IsNullOrEmpty(Page.Title)) ? "Réservation de vols et hotels en ligne" : Page.Title %></title>
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/FlightBooking.css" rel="stylesheet" type="text/css" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <!-- Static navbar -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" rel="home" href="/" title="FlightBooking">
+                            <img style="max-width: 32px; margin-top: -7px;" src="Assets/Icon.png" alt="" />
+                        </a>
+                        <a class="navbar-brand" runat="server" href="/">FlightBooking</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" href="/">Accueil</a></li>
+                            <li><a runat="server" href="/Travel.aspx">Réservations</a></li>
+                            <li><a href="#">A propos</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Je veux...<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a runat="server" href="/Travel.aspx">Planifier</a></li>
+                                    <li><a href="#">Trouver un vol</a></li>
+                                    <li><a href="#">Trouver un hôtel</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Mes articles...</li>
+                                    <li><a href="#">Mon Panier</a></li>
+                                    <li><a href="#">Paiement</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <!--<li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>-->
+                            <li><a href="#">Mon Panier (0)</a></li>
+                            <li><a runat="server" href="~/Contact.aspx">Nous Contacter</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+
+        </div>
+    </div> <!-- /navbar-wrapper -->
+    
+    <div class="container body-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+        <hr />
+        <footer>
+            <p>&copy; <%: DateTime.Now.Year %> - FlightBooking - EMN/FILA2 : Hadrien GERARD, Damien GOUJARD, Maxime PEROCHEAU, Joris PICHARD, Gabriel QUESTE</p>
+        </footer>
+    </div><!-- /container -->
+    
+    <script src="Scripts/jquery-2.1.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        /*
+        $(document).ready(function () {
+            var url = window.location.pathname;
+            var substr = url.split('/');
+            var urlaspx = substr[substr.length-1];
+            $('.nav').find('.active').removeClass('active');
+            $('.nav li a').each(function () {
+                if (url.length == 0) {
+                    if (this.href == "/" || this.href.indexOf("/Default") >= 0) {
+                        $(this).parent().addClass('active');
+                    }
+                } else if (this.href.indexOf(urlaspx) >= 0) {
+                    $(this).parent().addClass('active');
+                }
+            });
+        });
+        */
+    </script>
+
+</body>
+</html>
