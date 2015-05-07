@@ -9,15 +9,17 @@ using System.EnterpriseServices;
 
 namespace lib_Hotels
 {
+    [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsHotels: ServicedComponent
     {
+        public clsHotels() { }
         [AutoComplete]
         public List<resHotel> getHotelsDisponibles(String ville)
         {
             List<resHotel> ret = new List<resHotel>();
 
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
+            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=HOTELS;Integrated Security=True";
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_hotels_dispos", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -44,7 +46,7 @@ namespace lib_Hotels
             resHotel ret = new resHotel();
 
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
+            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=HOTELS;Integrated Security=True";
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_hotel_byId", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;

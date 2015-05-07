@@ -23,7 +23,7 @@ namespace lib_Commandes
         private void reserveVol(int idVol, DateTime date, String nomUtilisateur)
         {
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
+            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=CMDVOLS;Integrated Security=True";
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_reservation_vol", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -41,7 +41,7 @@ namespace lib_Commandes
         private void reserveHotel(int idHotel, DateTime date, String nomUtilisateur)
         {
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
+            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=CMDHOTELS;Integrated Security=True";
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_reservation_hotel", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
