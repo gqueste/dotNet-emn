@@ -4,20 +4,10 @@ Hadrien GERARD, Damien GOUJARD, Maxime PEROCHEAU, Joris PICHARD, Gabriel QUESTE
 
 ## User Story ##
 
-### Page 0 : Création d'un compte ou authentification de l'utilisateur ###
-
-L'utilisateur, s'il possède un compte, se connecte. Dans le cas contraire, il doit créer un compte via un formulaire.
-
-Champs :
-
-* Nom
-* Prénom
-* Email
-* Mot de passe
 
 ### Page 1 : Saisie du voyage ###
 
-L'utilisateur replit un formulaire sur le voyage qu'il veut réserver.
+L'utilisateur remplit un formulaire sur le voyage qu'il veut réserver.
 
 Champs :
 
@@ -34,7 +24,6 @@ Liste des vols correspondant à la recherche.
 L'utilisateur sélectionne le vol désiré.
 
 ### Page 3 : Saisie d'un hôtel ###
-
 Liste des hôtels correspondant à la recherche.
 
 L'utilisateur sélectionne l'hôtel désiré.
@@ -48,13 +37,6 @@ L'utilisateur remplit des informations sur le paiement, puis confirme.
 ### Page 5 : Affichage de la commande ###
 
 Récapitulatif de la commande effectuée
-
-### Page 5-bis : Annulation de la commande ###
-
-Possibilité pour l'utilisateur d'annuler sa commande.
-Une popup de confirmation apparaît et l'écran des commandes est rafraîchi.
-
-**Lors de l'affichage de la popup, la suppression de la réservation est propagée en base.**
 
 ## SQL ##
 
@@ -88,6 +70,8 @@ Une popup de confirmation apparaît et l'écran des commandes est rafraîchi.
 * serviceVols
     * getVolsDisponibles(villeDepart, villeArrivee, date)
     * getVol(idVol)
+    * getVillesDepart()
+    * getVillesArrivee()
 * serviceHotels
     * getHotelsDisponibles(ville)
     * getHotel(idHotel)
