@@ -16,27 +16,24 @@ namespace serviceHotels
     // [System.Web.Script.Services.ScriptService]
     public class WSHotels : System.Web.Services.WebService
     {
-// Déclarer la librairie et y faire référence
+        private lib_Hotels.clsHotels hotels;
 
         public WSHotels()
         {
-            // Paramètres que l'on veut dans le constructeur
+            this.hotels = new lib_Hotels.clsHotels();
 
         }
 
         [WebMethod]
-        public List<string> getHotelsDisponibles(string ville)
+        public List<lib_Hotels.resHotel> getHotelsDisponibles(string ville)
         {
-            // A voir si on met un Dataset ou si on garde la liste de strings
-            // Pour que ça marche pour l'instant
-            return new List<string>();
+            return this.hotels.getHotelsDisponibles(ville);
         }
 
         [WebMethod]
-        public string getHotel(int idHotel)
+        public lib_Hotels.resHotel getHotel(int idHotel)
         {
-            // A voir pour le type du retour
-            return "l'hôtel demandé";
+            return this.hotels.getHotel(idHotel);
         }
     }
 }
