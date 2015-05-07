@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.EnterpriseServices;
+using System.Messaging;
 
 namespace lib_Commandes
 {
@@ -16,11 +17,19 @@ namespace lib_Commandes
         [AutoComplete]
         public void reservation(int idVol, int idHotel, DateTime date, String nomUtilisateur)
         {
-            reserveVol(idVol, date, nomUtilisateur);
-            reserveHotel(idHotel, date, nomUtilisateur);
+            ReservationInfo transfert = new ReservationInfo();
+            transfert.ID_VOL = idVol;
+            transfert.ID_HOTEL = idHotel;
+            transfert.DATE = date;
+            transfert.NOM_UTILISATEUR = nomUtilisateur;
+
+            MessageQueue MyMQ = new MessageQueue(@".\private$\flightBooking");
+            MyMQ.Send(transfert, "Transfert FlightBooking");
+            MyMQ.Close();
         }
 
-        private void reserveVol(int idVol, DateTime date, String nomUtilisateur)
+        [AutoComplete]
+        public void reserveVol(int idVol, DateTime date, String nomUtilisateur)
         {
             SqlConnection MyConnection = new SqlConnection();
             MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
@@ -38,7 +47,8 @@ namespace lib_Commandes
             MyConnection.Close();
         }
 
-        private void reserveHotel(int idHotel, DateTime date, String nomUtilisateur)
+        [AutoComplete]
+        public void reserveHotel(int idHotel, DateTime date, String nomUtilisateur)
         {
             SqlConnection MyConnection = new SqlConnection();
             MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
@@ -55,5 +65,14 @@ namespace lib_Commandes
             MyCommand.ExecuteScalar();
             MyConnection.Close();
         }
+    }
+
+    public class ReservationInfo
+    {
+        public int ID_VOL { get; set; }
+        public int ID_HOTEL { get; set; }
+        public DateTime DATE { get; set; }
+        public String NOM_UTILISATEUR { get; set; }
+        
     }
 }
