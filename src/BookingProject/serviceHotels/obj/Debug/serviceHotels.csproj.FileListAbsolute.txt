@@ -1,0 +1,5 @@
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceHotels\bin\serviceHotels.dll.config
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceHotels\bin\serviceHotels.dll
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceHotels\bin\serviceHotels.pdb
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceHotels\obj\Debug\serviceHotels.dll
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceHotels\obj\Debug\serviceHotels.pdb

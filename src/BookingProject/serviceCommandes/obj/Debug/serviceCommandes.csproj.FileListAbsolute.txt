@@ -1,0 +1,6 @@
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceCommandes\bin\serviceCommandes.dll.config
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceCommandes\bin\serviceCommandes.dll
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceCommandes\bin\serviceCommandes.pdb
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceCommandes\obj\Debug\serviceCommandes.csprojResolveAssemblyReference.cache
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceCommandes\obj\Debug\serviceCommandes.dll
+C:\Users\Damien\Documents\EMN\Ingénierie Logicielle A2\Cours\DotNet\ProjetReservation\src\BookingProject\serviceCommandes\obj\Debug\serviceCommandes.pdb
