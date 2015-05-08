@@ -14,6 +14,9 @@ namespace lib_Commandes
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsCommandes: ServicedComponent
     {
+        private string ConnectionVols = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=CMDVOLS;Integrated Security=True";
+        private string ConnectionHotels = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=CMDHOTELS;Integrated Security=True";
+
         [AutoComplete]
         public void reservation(int idVol, int idHotel, DateTime date, String nomUtilisateur)
         {
@@ -32,7 +35,7 @@ namespace lib_Commandes
         public void reserveVol(int idVol, DateTime date, String nomUtilisateur)
         {
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=DARKKNIGHT\\SQLEXPRESS; Initial Catalog=CMDVOLS; Integrated Security=True";
+            MyConnection.ConnectionString = ConnectionVols;
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_reservation_vol", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -51,7 +54,7 @@ namespace lib_Commandes
         public void reserveHotel(int idHotel, DateTime date, String nomUtilisateur)
         {
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=DARKKNIGHT\\SQLEXPRESS; Initial Catalog=CMDHOTELS; Integrated Security=True";
+            MyConnection.ConnectionString = ConnectionHotels;
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_reservation_hotel", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
