@@ -12,11 +12,13 @@ namespace FlightBooking.Models
 {
     public partial class SelectionVol : System.Web.UI.Page
     {
+
+        List<resVol> vols = new List<resVol>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
             DemandeVol demande = Session["demandeVol"] as DemandeVol;
-            List<resVol> vols = new List<resVol>();
             if (demande != null)
             {
                 ServiceVols.WSVols serVols = new ServiceVols.WSVols();
@@ -28,26 +30,21 @@ namespace FlightBooking.Models
                 lblVilleDepart.Visible = true;
                 lblVilleArrivee.Visible = true;
             }
+            else
+            {
+                Response.Redirect("~/", true);
+            }
 
             GridView1.DataSource = vols;
             GridView1.DataBind();
         }
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName == "VIEW")
-            {
-                LinkButton lnkView = (LinkButton)e.CommandSource;
-                string dealId = lnkView.CommandArgument;
-                this.labelChoix.Text = dealId;
-            }
-        }
-
         protected void lnkView2_Click(object sender, EventArgs e)
         {
             GridViewRow grdrow = (GridViewRow)((LinkButton)sender).NamingContainer;
- 
-            this.labelChoix.Text = grdrow.DataItemIndex.ToString();
+            resVol vol = this.vols[grdrow.DataItemIndex];
+            Session["selectionVol"] = vol;
+            Response.Redirect("~/Models/SelectionHotel.aspx");
         }
     }
 }

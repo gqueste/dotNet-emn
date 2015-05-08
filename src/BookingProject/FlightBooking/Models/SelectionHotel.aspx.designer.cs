@@ -10,25 +10,16 @@
 namespace FlightBooking.Models {
     
     
-    public partial class SelectionVol {
+    public partial class SelectionHotel {
         
         /// <summary>
-        /// Contrôle lblDemandeDate.
+        /// Contrôle lblDate.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDemandeDate;
-        
-        /// <summary>
-        /// Contrôle lblVilleDepart.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVilleDepart;
+        protected global::System.Web.UI.WebControls.Label lblDate;
         
         /// <summary>
         /// Contrôle lblVilleArrivee.

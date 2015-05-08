@@ -77,6 +77,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Models\Confirmation.aspx" />
     <Content Include="Models\Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -97,6 +98,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Assets\Icon.png" />
+    <Content Include="Models\SelectionHotel.aspx" />
     <Content Include="Models\SelectionVol.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -124,6 +126,13 @@
     <Compile Include="Booking\DemandeVol.cs" />
     <Compile Include="Booking\Hotel.cs" />
     <Compile Include="Booking\Vol.cs" />
+    <Compile Include="Models\Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,6 +156,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SelectionHotel.aspx.cs">
+      <DependentUpon>SelectionHotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\SelectionHotel.aspx.designer.cs">
+      <DependentUpon>SelectionHotel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\SelectionVol.aspx.cs">
       <DependentUpon>SelectionVol.aspx</DependentUpon>

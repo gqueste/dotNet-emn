@@ -1,14 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FlightBooking.Master" AutoEventWireup="true" CodeBehind="SelectionVol.aspx.cs" Inherits="FlightBooking.Models.SelectionVol" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FlightBooking.Master" AutoEventWireup="true" CodeBehind="SelectionHotel.aspx.cs" Inherits="FlightBooking.Models.SelectionHotel" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-
-
     <h2> Votre recherche :</h2>
     <div class="container" style="border: solid 1px;">
-        Date de départ: <asp:Label ID ="lblDemandeDate" runat="server" visible ="false"/>
-        <br />
-        Ville de départ: <asp:Label ID="lblVilleDepart" runat="server" Visible="false" />
+        Date d'arrivée: <asp:Label ID ="lblDate" runat="server" visible ="false"/>
         <br />
         Ville d'arrivee: <asp:Label ID="lblVilleArrivee" runat="server" Visible="false" />
     </div>
@@ -18,13 +14,9 @@
           <asp:GridView AutoGenerateColumns="false" runat="server" ID="GridView1" CssClass="table table-hover"> 
              <HeaderStyle CssClass="thead"/>
              <Columns>
-                <asp:BoundField DataField="idVol" HeaderText="N°" />
-                <asp:BoundField DataField="nomVol" HeaderText="Nom" />
-                <asp:BoundField DataField="companie" HeaderText="Companie" />
-                <asp:BoundField DataField="dateVol" HeaderText="Date" />
-                <asp:BoundField DataField="duree" HeaderText="Durée" />
-                <asp:BoundField DataField="villeDepart" HeaderText="Départ" />
-                <asp:BoundField DataField="villeArrivee" HeaderText="Arrivée" />
+                <asp:BoundField DataField="nomHotel" HeaderText="Nom" />
+                <asp:BoundField DataField="descriptionHotel" HeaderText="Description" />
+                <asp:BoundField DataField="ville" HeaderText="Ville" />
                 <asp:TemplateField HeaderText="Choix">
                     <ItemTemplate>
                         <asp:LinkButton runat="server" ID="lnkView2" OnClick="lnkView2_Click" CssClass="btn btn-primary">Sélectionner</asp:LinkButton>
