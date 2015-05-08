@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getHotelsDisponibles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ville" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelsDisponiblesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelsDisponiblesResult" type="tns:ArrayOfResHotel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResHotel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="resHotel" nillable="true" type="tns:resHotel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="resHotel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ServicedComponent">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="idHotel" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomHotel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="descriptionHotel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ville" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ServicedComponent" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ContextBoundObject" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContextBoundObject" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MarshalByRefObject" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MarshalByRefObject" abstract="true" />
+      <s:element name="getHotel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idHotel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelResult" type="tns:resHotel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getHotelsDisponiblesSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotelsDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="getHotelsDisponiblesSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelsDisponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHotelSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotel" />
+  </wsdl:message>
+  <wsdl:message name="getHotelSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSHotelsSoap">
+    <wsdl:operation name="getHotelsDisponibles">
+      <wsdl:input message="tns:getHotelsDisponiblesSoapIn" />
+      <wsdl:output message="tns:getHotelsDisponiblesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHotel">
+      <wsdl:input message="tns:getHotelSoapIn" />
+      <wsdl:output message="tns:getHotelSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHotelsSoap" type="tns:WSHotelsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getHotelsDisponibles">
+      <soap:operation soapAction="http://tempuri.org/getHotelsDisponibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotel">
+      <soap:operation soapAction="http://tempuri.org/getHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHotelsSoap12" type="tns:WSHotelsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getHotelsDisponibles">
+      <soap12:operation soapAction="http://tempuri.org/getHotelsDisponibles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotel">
+      <soap12:operation soapAction="http://tempuri.org/getHotel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSHotels">
+    <wsdl:port name="WSHotelsSoap" binding="tns:WSHotelsSoap">
+      <soap:address location="http://localhost:54932/WSHotels.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSHotelsSoap12" binding="tns:WSHotelsSoap12">
+      <soap12:address location="http://localhost:54932/WSHotels.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

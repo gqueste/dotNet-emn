@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FlightBooking.ServiceVols;
 
 namespace FlightBooking.Models
 {
@@ -15,9 +16,11 @@ namespace FlightBooking.Models
         {
 
             DemandeVol demande = Session["demandeVol"] as DemandeVol;
-
+            List<resVol> vols = new List<resVol>();
             if (demande != null)
             {
+                ServiceVols.WSVolsSoapClient serVols = new ServiceVols.WSVolsSoapClient();
+                vols = serVols.getVolsDisponibles(demande.villeDepart, demande.villeArrivee, demande.dateDepart).ToList<resVol>();
                 lblDemandeDate.Text = demande.dateDepart.ToShortDateString();
                 lblVilleDepart.Text = demande.villeDepart;
                 lblVilleArrivee.Text = demande.villeArrivee;
@@ -26,43 +29,6 @@ namespace FlightBooking.Models
                 lblVilleArrivee.Visible = true;
             }
 
-            Vol v1 = new Vol()
-            {
-                idVol = 1,
-                nomVol = "AirFrance classe eco bla bla",
-                companie = "AirFrance",
-                dateVol = DateTime.Now,
-                duree = 3.5,
-                villeDepart = "Paris",
-                villeArrivee = "New York"
-            };
-
-            Vol v2 = new Vol()
-            {
-                idVol = 2,
-                nomVol = "AirFrance premiere classe",
-                companie = "AirFrance",
-                dateVol = DateTime.Now.AddHours(2.0),
-                duree = 3.5,
-                villeDepart = "Paris",
-                villeArrivee = "New York"
-            };
-
-            Vol v3 = new Vol()
-            {
-                idVol = 3,
-                nomVol = "AirFrance eazy dotNet",
-                companie = "AirFrance",
-                dateVol = DateTime.Now.AddHours(5.0),
-                duree = 3.5,
-                villeDepart = "Paris",
-                villeArrivee = "New York"
-            };
-
-            List<Vol> vols = new List<Vol>();
-            vols.Add(v1);
-            vols.Add(v2);
-            vols.Add(v3);
             GridView1.DataSource = vols;
             GridView1.DataBind();
         }
