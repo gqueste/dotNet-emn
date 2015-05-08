@@ -27,8 +27,8 @@ namespace lib_Vols
             MyCommand.Parameters["@VILLE_DEPART"].Value = villeDepart;
             MyCommand.Parameters.Add("@VILLE_ARRIVEE", SqlDbType.VarChar);
             MyCommand.Parameters["@VILLE_ARRIVEE"].Value = villeArrivee;
-            MyCommand.Parameters.Add("@DUREE", SqlDbType.DateTime);
-            MyCommand.Parameters["@DUREE"].Value = date;
+            MyCommand.Parameters.Add("@DATE", SqlDbType.DateTime);
+            MyCommand.Parameters["@DATE"].Value = date;
 
             SqlDataReader reader = MyCommand.ExecuteReader();
             while (reader.Read())
@@ -36,7 +36,7 @@ namespace lib_Vols
                 resVol oneVol = new resVol();
                 oneVol.idVol = reader.GetInt32(0);
                 oneVol.nomVol = reader.GetString(1);
-                oneVol.companie = reader.GetString(2);
+                oneVol.compagnie = reader.GetString(2);
                 oneVol.dateVol = reader.GetDateTime(3);
                 oneVol.duree = reader.GetDouble(4);
                 oneVol.villeDepart = reader.GetString(5);
@@ -65,7 +65,7 @@ namespace lib_Vols
             {
                 ret.idVol = reader.GetInt32(0);
                 ret.nomVol = reader.GetString(1);
-                ret.companie = reader.GetString(2);
+                ret.compagnie = reader.GetString(2);
                 ret.dateVol = reader.GetDateTime(3);
                 ret.duree = reader.GetDouble(4);
                 ret.villeDepart = reader.GetString(5);
@@ -120,7 +120,7 @@ namespace lib_Vols
     public class resVol : ServicedComponent{
         public int idVol;
         public String nomVol;
-        public String companie;
+        public String compagnie;
         public DateTime dateVol;
         public double duree;
         public String villeDepart;

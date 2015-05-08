@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FlightBooking.ServiceVols;
 
 namespace FlightBooking
 {
@@ -14,20 +15,17 @@ namespace FlightBooking
         {
             if (!this.IsPostBack)
             {
-                var villes = new List<String>();
-                villes.Add("Paris");
-                villes.Add("Berlin");
-                villes.Add("Londre");
-                villes.Add("New York");
-                villes.Add("Los Angeles");
-                villes.Add("Tokyo");
-                villes.Add("Pekin");
 
-                this.ListBox1.DataSource = villes;
+                
+                ServiceVols.WSVols serVols = new ServiceVols.WSVols();
+                var villesDepart = serVols.getVillesDepart();
+                var villesArrivee = serVols.getVillesArrivee();
+
+                this.ListBox1.DataSource = villesDepart;
                 this.ListBox1.SelectedIndex = 0;
                 this.ListBox1.DataBind();
 
-                this.ListBox2.DataSource = villes;
+                this.ListBox2.DataSource = villesArrivee;
                 this.ListBox2.SelectedIndex = 1;
                 this.ListBox2.DataBind();
 
