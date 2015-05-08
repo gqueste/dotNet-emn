@@ -444,7 +444,7 @@ GO
 CREATE TABLE [dbo].[Vols](
 	[idVol] [int] IDENTITY(1,1) NOT NULL,
 	[nomVol] [nvarchar](50) NOT NULL,
-	[companie] [nvarchar](50) NOT NULL,
+	[compagnie] [nvarchar](50) NOT NULL,
 	[dateVol] [datetime] NOT NULL,
 	[duree] [float] NOT NULL,
 	[villeDepart] [nvarchar](50) NOT NULL,
