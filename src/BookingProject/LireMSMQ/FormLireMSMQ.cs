@@ -73,15 +73,8 @@ namespace LireMSMQ
 
         private void btnCreationMSMQ_Click(object sender, EventArgs e)
         {
-            ReservationInfo transfert = new ReservationInfo();
-            transfert.ID_VOL = "5";
-            transfert.ID_HOTEL = "2";
-            transfert.DATE = "01/01/98 23:59:59.999";
-            transfert.NOM_UTILISATEUR = "Gégé";
-
-            MessageQueue MyMQ = new MessageQueue(@".\private$\flightBooking");
-            MyMQ.Send(transfert, "Transfert FlightBooking");
-            MyMQ.Close();
+            clsCommandes clsC = new clsCommandes();
+            clsC.reservation(10,20, DateTime.Now, "Joris");
         }
     }
 }
