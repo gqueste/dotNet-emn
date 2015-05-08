@@ -34,11 +34,11 @@ namespace lib_Vols
             while (reader.Read())
             {
                 resVol oneVol = new resVol();
-                oneVol.idVol = reader.GetInt16(0);
+                oneVol.idVol = reader.GetInt32(0);
                 oneVol.nomVol = reader.GetString(1);
                 oneVol.companie = reader.GetString(2);
                 oneVol.dateVol = reader.GetDateTime(3);
-                oneVol.duree = reader.GetFloat(4);
+                oneVol.duree = reader.GetDouble(4);
                 oneVol.villeDepart = reader.GetString(5);
                 oneVol.villeArrivee = reader.GetString(6);
                 ret.Add(oneVol);
@@ -63,11 +63,11 @@ namespace lib_Vols
             SqlDataReader reader = MyCommand.ExecuteReader();
             while (reader.Read())
             {
-                ret.idVol = reader.GetInt16(0);
+                ret.idVol = reader.GetInt32(0);
                 ret.nomVol = reader.GetString(1);
                 ret.companie = reader.GetString(2);
                 ret.dateVol = reader.GetDateTime(3);
-                ret.duree = reader.GetFloat(4);
+                ret.duree = reader.GetDouble(4);
                 ret.villeDepart = reader.GetString(5);
                 ret.villeArrivee = reader.GetString(6);
             }
@@ -122,7 +122,7 @@ namespace lib_Vols
         public String nomVol;
         public String companie;
         public DateTime dateVol;
-        public float duree;
+        public double duree;
         public String villeDepart;
         public String villeArrivee;
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using lib_Vols;
 
 namespace serviceVols
 {
@@ -16,23 +17,23 @@ namespace serviceVols
     // [System.Web.Script.Services.ScriptService]
     public class WSVols : System.Web.Services.WebService
     {
-        private lib_Vols.clsVols vols;
+        private clsVols vols;
 
         public WSVols()
         {
-            this.vols = new lib_Vols.clsVols();
+            this.vols = new clsVols();
 
         }
 
         [WebMethod]
-        public List<lib_Vols.resVol> getVolsDisponibles(string villeDepart, string villeArrivee, DateTime date)
+        public List<resVol> getVolsDisponibles(string villeDepart, string villeArrivee, DateTime date)
         {
 
             return this.vols.getVolsDisponibles(villeDepart, villeArrivee, date);
         }
 
         [WebMethod]
-        public lib_Vols.resVol getVol(int idVol)
+        public resVol getVol(int idVol)
         {
             return this.vols.getVol(idVol);
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using lib_Commandes;
 
 namespace serviceCommandes
 {
@@ -17,11 +18,11 @@ namespace serviceCommandes
     public class WSCommandes : System.Web.Services.WebService
     {
 
-        private lib_Commandes.clsCommandes commandes;
+        private clsCommandes commandes;
 
         public WSCommandes()
         {
-            this.commandes = new lib_Commandes.clsCommandes();
+            this.commandes = new clsCommandes();
         }
 
         [WebMethod]
