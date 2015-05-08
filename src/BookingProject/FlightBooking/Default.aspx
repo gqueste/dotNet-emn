@@ -23,7 +23,7 @@
                             <!-- Prenez le large ! Voyagez !-->
                             <p>Planifiez, réservez votre vol, choissisez votre hôtel et envolez-vous !</p>
                             <p>
-                                <a class="btn btn-lg btn-primary" href="/Travel.aspx" role="button">Réservez &raquo;</a>
+                                <a class="btn btn-lg btn-primary" href="~/Models/Travel.aspx" role="button">Réservez &raquo;</a>
                             </p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                             <h1>Evadez-vous !</h1>
                             <p>Des destinations de rêve en quelques clics !</p>
                             <p>
-                                <a class="btn btn-lg btn-primary" href="/Travel.aspx" role="button">Réservez &raquo;</a>
+                                <a class="btn btn-lg btn-primary" href="~/Models/Travel.aspx" role="button">Réservez &raquo;</a>
                             </p>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                             <h1>Prenez le large !</h1>
                             <p>Le soleil, le sable fin et le confort d'une chambre d'hôtel en trois étapes !</p>
                             <p>
-                                <a class="btn btn-lg btn-primary" href="/Travel.aspx"role="button">Réservez &raquo;</a>
+                                <a class="btn btn-lg btn-primary" href="~/Models/Travel.aspx"role="button">Réservez &raquo;</a>
                             </p>
                         </div>
                     </div>
