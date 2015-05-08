@@ -38,7 +38,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" rel="home" href="/" title="FlightBooking">
-                            <img style="max-width: 32px; margin-top: -7px;" src="Assets/Icon.png" alt="" />
+                            <img style="max-width: 32px; margin-top: -7px;" src="/Assets/Icon.png" alt="" />
                         </a>
                         <a class="navbar-brand" runat="server" href="/">FlightBooking</a>
                     </div>

@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
 
-    <div class="jumbotron" style="background: url('Assets/openphotonet_IMG_6018.jpg') no-repeat bottom center; background-size: cover;">
+    <div class="jumbotron" style="background: url('/Assets/openphotonet_IMG_6018.jpg') no-repeat bottom center; background-size: cover;">
         <h2 style="color:white;">1: Planifiez</h2>
         <br />
         <br />

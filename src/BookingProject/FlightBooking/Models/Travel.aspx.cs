@@ -68,7 +68,7 @@ namespace FlightBooking
             };
 
             Session.Add("demandeVol", demande);
-            Response.Redirect("~/Test.aspx", true);
+            Response.Redirect("~/Models/SelectionVol.aspx", true);
         }
     }
 }
