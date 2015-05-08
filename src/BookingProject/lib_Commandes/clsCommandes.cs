@@ -18,9 +18,9 @@ namespace lib_Commandes
         public void reservation(int idVol, int idHotel, DateTime date, String nomUtilisateur)
         {
             ReservationInfo transfert = new ReservationInfo();
-            transfert.ID_VOL = idVol;
-            transfert.ID_HOTEL = idHotel;
-            transfert.DATE = date;
+            transfert.ID_VOL = idVol.ToString();
+            transfert.ID_HOTEL = idHotel.ToString();
+            transfert.DATE = date.ToString();
             transfert.NOM_UTILISATEUR = nomUtilisateur;
 
             MessageQueue MyMQ = new MessageQueue(@".\private$\flightBooking");
@@ -32,7 +32,7 @@ namespace lib_Commandes
         public void reserveVol(int idVol, DateTime date, String nomUtilisateur)
         {
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=CMDVOLS;Integrated Security=True";
+            MyConnection.ConnectionString = "Data Source=DARKKNIGHT\\SQLEXPRESS; Initial Catalog=CMDVOLS; Integrated Security=True";
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_reservation_vol", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -51,7 +51,7 @@ namespace lib_Commandes
         public void reserveHotel(int idHotel, DateTime date, String nomUtilisateur)
         {
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=CMDHOTELS;Integrated Security=True";
+            MyConnection.ConnectionString = "Data Source=DARKKNIGHT\\SQLEXPRESS; Initial Catalog=CMDHOTELS; Integrated Security=True";
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_reservation_hotel", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -69,9 +69,9 @@ namespace lib_Commandes
 
     public class ReservationInfo
     {
-        public int ID_VOL { get; set; }
-        public int ID_HOTEL { get; set; }
-        public DateTime DATE { get; set; }
+        public String ID_VOL { get; set; }
+        public String ID_HOTEL { get; set; }
+        public String DATE { get; set; }
         public String NOM_UTILISATEUR { get; set; }
         
     }
