@@ -11,13 +11,15 @@ namespace lib_Vols
 {
     public class clsVols : ServicedComponent
     {
+        private string Connection = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=VOLS;Integrated Security=True";
+
         [AutoComplete]
         public List<resVol> getVolsDisponibles(String villeDepart, String villeArrivee, DateTime date)
         {
             List<resVol> ret = new List<resVol>();
 
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
+            MyConnection.ConnectionString = Connection;
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_vols_dispos", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -51,7 +53,7 @@ namespace lib_Vols
             resVol ret = new resVol();
 
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
+            MyConnection.ConnectionString = Connection;
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_vol_byId", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -79,7 +81,7 @@ namespace lib_Vols
             List<String> ret = new List<String>();
 
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
+            MyConnection.ConnectionString = Connection;
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_villesDepart", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -99,7 +101,7 @@ namespace lib_Vols
             List<String> ret = new List<String>();
 
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=BANK_FR;Integrated Security=True";
+            MyConnection.ConnectionString = Connection;
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_villesArrivee", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;

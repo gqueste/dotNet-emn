@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using lib_Hotels;
 
 namespace serviceHotels
 {
@@ -16,22 +17,22 @@ namespace serviceHotels
     // [System.Web.Script.Services.ScriptService]
     public class WSHotels : System.Web.Services.WebService
     {
-        private lib_Hotels.clsHotels hotels;
+        private clsHotels hotels;
 
         public WSHotels()
         {
-            this.hotels = new lib_Hotels.clsHotels();
+            this.hotels = new clsHotels();
 
         }
 
         [WebMethod]
-        public List<lib_Hotels.resHotel> getHotelsDisponibles(string ville)
+        public List<resHotel> getHotelsDisponibles(string ville)
         {
             return this.hotels.getHotelsDisponibles(ville);
         }
 
         [WebMethod]
-        public lib_Hotels.resHotel getHotel(int idHotel)
+        public resHotel getHotel(int idHotel)
         {
             return this.hotels.getHotel(idHotel);
         }

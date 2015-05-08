@@ -12,14 +12,14 @@ namespace lib_Hotels
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsHotels: ServicedComponent
     {
-        public clsHotels() { }
+        private string Connection = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=HOTELS;Integrated Security=True";
         [AutoComplete]
         public List<resHotel> getHotelsDisponibles(String ville)
         {
             List<resHotel> ret = new List<resHotel>();
 
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=HOTELS;Integrated Security=True";
+            MyConnection.ConnectionString = Connection;
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_hotels_dispos", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
@@ -30,7 +30,7 @@ namespace lib_Hotels
             while (reader.Read())
             {
                 resHotel oneHotel = new resHotel();
-                oneHotel.idHotel = reader.GetInt16(0);
+                oneHotel.idHotel = reader.GetInt32(0);
                 oneHotel.nomHotel = reader.GetString(1);
                 oneHotel.descriptionHotel = reader.GetString(2);
                 oneHotel.ville = reader.GetString(3);
@@ -46,17 +46,17 @@ namespace lib_Hotels
             resHotel ret = new resHotel();
 
             SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = "Data Source=FR-92-02-14-008;Initial Catalog=HOTELS;Integrated Security=True";
+            MyConnection.ConnectionString = Connection;
             MyConnection.Open();
             SqlCommand MyCommand = new SqlCommand("sp_hotel_byId", MyConnection);
             MyCommand.CommandType = CommandType.StoredProcedure;
             MyCommand.Parameters.Add("@ID_HOTEL", SqlDbType.Int);
-            MyCommand.Parameters["@ID_HOTEL"].Value = idHotel;
+            MyCommand.Parameters["@ID_HOTEL"].Value = Convert.ToInt16(idHotel);
 
             SqlDataReader reader = MyCommand.ExecuteReader();
             while (reader.Read())
             {
-                ret.idHotel = reader.GetInt16(0);
+                ret.idHotel = reader.GetInt32(0);
                 ret.nomHotel = reader.GetString(1);
                 ret.descriptionHotel = reader.GetString(2);
                 ret.ville = reader.GetString(3);
