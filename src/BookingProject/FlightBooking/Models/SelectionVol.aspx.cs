@@ -19,7 +19,7 @@ namespace FlightBooking.Models
             List<resVol> vols = new List<resVol>();
             if (demande != null)
             {
-                ServiceVols.WSVolsSoapClient serVols = new ServiceVols.WSVolsSoapClient();
+                ServiceVols.WSVols serVols = new ServiceVols.WSVols();
                 vols = serVols.getVolsDisponibles(demande.villeDepart, demande.villeArrivee, demande.dateDepart).ToList<resVol>();
                 lblDemandeDate.Text = demande.dateDepart.ToShortDateString();
                 lblVilleDepart.Text = demande.villeDepart;
