@@ -12,10 +12,8 @@ namespace FlightBooking.Models
 {
     public partial class SelectionVol : System.Web.UI.Page
     {
-
         protected resVol[] vols;
-
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Routing.needRedirect(this, Routing.State.SELECTION_VOL))
@@ -32,12 +30,28 @@ namespace FlightBooking.Models
                 lblDemandeDate.Text = demande.DateDepart.ToShortDateString();
                 lblVilleDepart.Text = demande.VilleDepart;
                 lblVilleArrivee.Text = demande.VilleArrivee;
-                GridView1.DataSource = vols;
-                GridView1.DataBind();
+                
+                if (vols != null && vols.Length > 0) 
+                {
+                    grdViewVols.DataSource = vols;
+                    grdViewVols.DataBound += (s, ev) => grdViewVols.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    grdViewVols.DataBind();
+                }
+                else
+                {
+                    lblNoResults.Visible = true;
+                    btnNouvelleRecherche.CssClass = "btn btn-primary";
+                } 
             } 
         }
 
-        protected void lnkView2_Click(object sender, EventArgs e)
+        protected void btnNouvelleRecherche_Click(object sender, EventArgs e)
+        {
+            FlightBookingContext.get(this).Commande = null;
+            Response.Redirect(Routing.getStateUrl(Routing.State.SAISIE_DEMANDE), true);
+        }
+
+        protected void lnkBtnSelection_Click(object sender, EventArgs e)
         {
             GridViewRow grdrow = (GridViewRow)((LinkButton)sender).NamingContainer;
 
@@ -46,5 +60,6 @@ namespace FlightBooking.Models
         
             Response.Redirect(Routing.getStateUrl(Routing.State.SELECTION_HOTEL), true);
         }
+
     }
 }

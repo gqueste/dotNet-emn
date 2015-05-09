@@ -22,13 +22,13 @@ namespace FlightBooking {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Contrôle ScriptManager1.
+        /// Contrôle ScriptManagerTravel.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.ScriptManager ScriptManagerTravel;
         
         /// <summary>
         /// Contrôle UpdatePanel1.
@@ -40,58 +40,58 @@ namespace FlightBooking {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Contrôle Calendar.
+        /// Contrôle calendarDateDepart.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar;
+        protected global::System.Web.UI.WebControls.Calendar calendarDateDepart;
         
         /// <summary>
-        /// Contrôle UpdateProgress1.
+        /// Contrôle lstBoxVilleDepart.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgress1;
+        protected global::System.Web.UI.WebControls.ListBox lstBoxVilleDepart;
         
         /// <summary>
-        /// Contrôle ListBox1.
+        /// Contrôle lstBoxVilleArrivee.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.ListBox lstBoxVilleArrivee;
         
         /// <summary>
-        /// Contrôle ListBox2.
+        /// Contrôle lblChoixDate.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox2;
+        protected global::System.Web.UI.WebControls.Label lblChoixDate;
         
         /// <summary>
-        /// Contrôle Button1.
+        /// Contrôle lblChoixDepart.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label lblChoixDepart;
         
         /// <summary>
-        /// Contrôle Label1.
+        /// Contrôle lblChoixArrivee.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblChoixArrivee;
         
         /// <summary>
         /// Contrôle btnConfirmer.
@@ -101,5 +101,14 @@ namespace FlightBooking {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConfirmer;
+        
+        /// <summary>
+        /// Contrôle UpdateProgress1.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress UpdateProgress1;
     }
 }

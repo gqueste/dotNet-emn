@@ -30,7 +30,6 @@ namespace FlightBooking.Models
         protected void cbInformationsValides_CheckedChanged(object sender, EventArgs e)
         {
             btnPayer.Enabled = cbInformationsValides.Checked;
-            btnPayer.CssClass = cbInformationsValides.Checked ? "btn btn-success" : "btn btn-default";
         }
 
         protected void btnAnnuler_Click(object sender, EventArgs e)

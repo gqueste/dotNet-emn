@@ -23,44 +23,40 @@ namespace FlightBooking
                 var villesDepart = serVols.getVillesDepart();
                 var villesArrivee = serVols.getVillesArrivee();
 
-                this.ListBox1.DataSource = villesDepart;
-                this.ListBox1.SelectedIndex = 0;
-                this.ListBox1.DataBind();
+                this.lstBoxVilleDepart.DataSource = villesDepart;
+                this.lstBoxVilleDepart.DataBind();
 
-                this.ListBox2.DataSource = villesArrivee;
-                this.ListBox2.SelectedIndex = 1;
-                this.ListBox2.DataBind();
+                this.lstBoxVilleArrivee.DataSource = villesArrivee;
+                this.lstBoxVilleArrivee.DataBind();
 
-                this.Calendar.SelectedDate = this.Calendar.TodaysDate;
-                this.Calendar.DataBind();
+                this.calendarDateDepart.SelectedDate = this.calendarDateDepart.TodaysDate;
+                this.calendarDateDepart.DataBind();
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void selectionChanged(object sender, EventArgs e)
         {
-            this.ListBox2.DataBind();
-            this.ListBox1.DataBind();
-            String depart = ListBox1.SelectedValue;
-            String arrivee = ListBox2.SelectedValue;
-            DateTime date = Calendar.SelectedDate;
+            DateTime date = calendarDateDepart.SelectedDate ;
+            String depart = lstBoxVilleDepart.SelectedValue;
+            String arrivee = lstBoxVilleArrivee.SelectedValue;
 
-            this.Label1.Text = "Vous avez choisi : " + depart + " - " + arrivee + "(" + date.ToString("dd/MM/yyyy") + ")";
-            this.Label1.Visible = true;
-            this.btnConfirmer.Visible = true;
-        }
-
-        protected void Calendar_SelectionChanged(object sender, EventArgs e)
-        {
-            this.Calendar.SelectedDate = ((Calendar)sender).SelectedDate;
+            this.lblChoixDate.Text = "Date : " + date.ToString("dd/MM/yyyy");
+            this.lblChoixDepart.Text = (!String.IsNullOrEmpty(depart) ? "Départ : " + depart : "");
+            this.lblChoixArrivee.Text = (!String.IsNullOrEmpty(arrivee) ? "Arrivée : " + arrivee : "");
+            
+            if (!String.IsNullOrEmpty(depart) && !String.IsNullOrEmpty(arrivee))
+            {
+                this.btnConfirmer.Visible = true;
+            }
         }
 
         protected void btnConfirmer_Click(object sender, EventArgs e)
         {
             var demande = new DemandeVol()
             {
-                DateDepart = Calendar.SelectedDate,
-                VilleDepart = ListBox1.SelectedValue,
-                VilleArrivee = ListBox2.SelectedValue
+                DateDepart = calendarDateDepart.SelectedDate,
+                VilleDepart = lstBoxVilleDepart.SelectedValue,
+                VilleArrivee = lstBoxVilleArrivee.SelectedValue
             };
 
             var commande = new Commande() 
@@ -72,5 +68,6 @@ namespace FlightBooking
 
             Response.Redirect(Routing.getStateUrl(Routing.State.SELECTION_VOL), true);
         }
+
     }
 }

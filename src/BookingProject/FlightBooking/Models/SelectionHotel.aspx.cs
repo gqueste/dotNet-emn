@@ -61,13 +61,27 @@ namespace FlightBooking.Models
 
                 // --------------- FIN CODE A SUPPRIMER ----------------------------------
 
-                GridView1.DataSource = hotels;
-                GridView1.DataBind();
-
+                if (hotels != null && hotels.Length > 0)
+                {
+                    grdViewHotels.DataSource = hotels;
+                    grdViewHotels.DataBound += (s, ev) => grdViewHotels.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    grdViewHotels.DataBind();
+                }
+                else
+                {
+                    lblNoResults.Visible = true;
+                    btnNouvelleRecherche.CssClass = "btn btn-primary";
+                }
             } 
         }
 
-        protected void lnkView2_Click(object sender, EventArgs e)
+        protected void btnNouvelleRecherche_Click(object sender, EventArgs e)
+        {
+            FlightBookingContext.get(this).Commande = null;
+            Response.Redirect(Routing.getStateUrl(Routing.State.SAISIE_DEMANDE), true);
+        }
+
+        protected void lnkBtnSelection_Click(object sender, EventArgs e)
         {
             GridViewRow grdrow = (GridViewRow)((LinkButton)sender).NamingContainer;
 
@@ -76,5 +90,6 @@ namespace FlightBooking.Models
 
             Response.Redirect(Routing.getStateUrl(Routing.State.CONFIRMATION_DEMANDE), true);
         }
+
     }
 }

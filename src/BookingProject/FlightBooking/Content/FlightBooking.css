@@ -40,7 +40,10 @@ body {
 }
 
 
-
+.jumbotron-info {
+    padding-top: 10px;
+    height: 85px;
+}
 
 
 /* RESPONSIVE CSS
