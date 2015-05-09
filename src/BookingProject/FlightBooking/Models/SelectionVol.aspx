@@ -21,7 +21,7 @@
             <Columns>
                 <asp:BoundField DataField="idVol" HeaderText="N°" />
                 <asp:BoundField DataField="nomVol" HeaderText="Nom" />
-                <asp:BoundField DataField="companie" HeaderText="Companie" />
+                <asp:BoundField DataField="companie" HeaderText="Compagnie" />
                 <asp:BoundField DataField="dateVol" HeaderText="Date" />
                 <asp:BoundField DataField="duree" HeaderText="Durée" />
                 <asp:BoundField DataField="villeDepart" HeaderText="Départ" />

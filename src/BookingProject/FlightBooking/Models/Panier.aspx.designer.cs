@@ -10,87 +10,78 @@
 namespace FlightBooking.Models {
     
     
-    public partial class Paiement {
+    public partial class Panier {
         
         /// <summary>
-        /// Contrôle ScriptManagerPaiement.
+        /// Contrôle pnlPanierVide.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManagerPaiement;
+        protected global::System.Web.UI.WebControls.Panel pnlPanierVide;
         
         /// <summary>
-        /// Contrôle lblError.
+        /// Contrôle lblPanierVide.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Label lblPanierVide;
         
         /// <summary>
-        /// Contrôle tbNomClient.
+        /// Contrôle btnGoToSelection.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbNomClient;
+        protected global::System.Web.UI.WebControls.Button btnGoToSelection;
         
         /// <summary>
-        /// Contrôle tbPrenomClient.
+        /// Contrôle pnlPanierNonVide.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPrenomClient;
+        protected global::System.Web.UI.WebControls.Panel pnlPanierNonVide;
         
         /// <summary>
-        /// Contrôle tbMail.
+        /// Contrôle lblPanierNonVide.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbMail;
+        protected global::System.Web.UI.WebControls.Label lblPanierNonVide;
         
         /// <summary>
-        /// Contrôle updtPnlValidite.
+        /// Contrôle lblNomHotel.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updtPnlValidite;
+        protected global::System.Web.UI.WebControls.Label lblNomHotel;
         
         /// <summary>
-        /// Contrôle cbInformationsValides.
+        /// Contrôle lblDescriptionHotel.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbInformationsValides;
+        protected global::System.Web.UI.WebControls.Label lblDescriptionHotel;
         
         /// <summary>
-        /// Contrôle btnAnnuler.
+        /// Contrôle lblVilleHotel.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAnnuler;
-        
-        /// <summary>
-        /// Contrôle btnPayer.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPayer;
+        protected global::System.Web.UI.WebControls.Label lblVilleHotel;
     }
 }

@@ -10,6 +10,7 @@
                 <!-- Permet l'utilisation d'AJAX -->
                 <asp:ScriptManager ID="ScriptManagerPaiement" runat="server" />
             </div>
+            <asp:Label runat="server" ID="lblError" CssClass="alert-danger" Visible="false" Text="Veuillez saisir tous les champs." />
             <fieldset>
                 <legend>Vos informations (Passager)</legend>
                 <div class="form-group">

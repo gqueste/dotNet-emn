@@ -63,6 +63,7 @@
     </None>
     <Content Include="Models\ConfirmationReservation.aspx" />
     <Content Include="Models\Paiement.aspx" />
+    <Content Include="Models\Panier.aspx" />
     <Content Include="Web References\ServiceCommandes\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -187,6 +188,13 @@
     </Compile>
     <Compile Include="Models\Paiement.aspx.designer.cs">
       <DependentUpon>Paiement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panier.aspx.cs">
+      <DependentUpon>Panier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\Panier.aspx.designer.cs">
+      <DependentUpon>Panier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\SelectionHotel.aspx.cs">
       <DependentUpon>SelectionHotel.aspx</DependentUpon>

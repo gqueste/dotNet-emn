@@ -41,26 +41,35 @@ namespace FlightBooking.Models
 
         protected void btnPayer_Click(object sender, EventArgs e)
         {
-            //TODO: Ajouter la vérification des champs texte et afficher un message d'erreur si invalides
+            bool emptyFields = String.IsNullOrWhiteSpace(this.tbNomClient.Text) 
+                               || String.IsNullOrWhiteSpace(this.tbPrenomClient.Text)
+                               || String.IsNullOrWhiteSpace(this.tbMail.Text);
 
-            var context = FlightBookingContext.get(this);
-
-            var client = new Client()
+            if (emptyFields)
             {
-                Nom = this.tbNomClient.Text,
-                Prenom = this.tbPrenomClient.Text,
-                Email = this.tbMail.Text
-            };
-            context.Client = client;
+                this.lblError.Visible = true;
+            }
+            else
+            {
+                var context = FlightBookingContext.get(this);
 
-            var commande = context.Commande;
-            commande.Client = client;
-            commande.Payee = true;
+                var client = new Client()
+                {
+                    Nom = this.tbNomClient.Text,
+                    Prenom = this.tbPrenomClient.Text,
+                    Email = this.tbMail.Text
+                };
+                context.Client = client;
 
-            var serviceCommandes = new ServiceCommandes.WSCommandes();
-            serviceCommandes.reservation(commande.Vol.idVol, commande.Hotel.idHotel, DateTime.Now, commande.Client.Nom + " " + commande.Client.Prenom);
+                var commande = context.Commande;
+                commande.Client = client;
+                commande.Payee = true;
 
-            Response.Redirect(Routing.getStateUrl(Routing.State.CONFIRMATION_RESERVATION), true);
+                var serviceCommandes = new ServiceCommandes.WSCommandes();
+                serviceCommandes.reservation(commande.Vol.idVol, commande.Hotel.idHotel, DateTime.Now, commande.Client.Nom + " " + commande.Client.Prenom);
+
+                Response.Redirect(Routing.getStateUrl(Routing.State.CONFIRMATION_RESERVATION), true);
+            }
         }
 
     }

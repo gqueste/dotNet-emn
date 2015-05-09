@@ -49,8 +49,11 @@
                             <li><a runat="server" href="~/Models/Contact.aspx">A propos</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <!--<li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>-->
-                            <li><a href="#"><asp:Label runat="server" ID="lblPanier" Text="Mon Panier" /></a></li>
+                            <li>
+                                <a runat="server" href="~/Models/Panier.aspx">
+                                    <asp:Label runat="server" ID="lblPanier" Text="Mon Panier" />
+                                </a>
+                            </li>
                             <li><a runat="server" href="~/Models/Contact.aspx">Nous Contacter</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->

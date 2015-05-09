@@ -17,7 +17,29 @@ namespace FlightBooking.Models
             }
             else
             {
-                //TODO: Placer ici le code à executer au chargement de la page
+                var commande = FlightBookingContext.get(this).Commande;
+
+                // Vol :
+                var vol = commande.Vol;
+                lblIdVol.Text = vol.idVol.ToString();
+                lblNomVol.Text = vol.nomVol;
+                lblCompagnie.Text = vol.companie;
+                lblDateVol.Text = vol.dateVol.ToShortDateString();
+                lblDuree.Text = vol.duree + " heures";
+                lblVilleDepart.Text = vol.villeDepart;
+                lblVilleArrivee.Text = vol.villeArrivee;
+
+                // Client :
+                var client = commande.Client;
+                lblNomClient.Text = client.Nom;
+                lblPrenomClient.Text = client.Prenom;
+                lblEmailClient.Text = client.Email;
+
+                // Hotel :
+                var hotel = commande.Hotel;
+                lblNomHotel.Text = hotel.nomHotel;
+                lblDescriptionHotel.Text = hotel.descriptionHotel;
+                lblVilleHotel.Text = hotel.ville;
             }
         }
 
