@@ -52,7 +52,7 @@ namespace LireMSMQ
             var message = (ReservationInfo)MyMQ.Peek().Body;
 
             //Tranfert en mode transactionnel
-            bool ResT = Reservation(message.ID_VOL, message.ID_VOL, message.DATE, message.NOM_UTILISATEUR);
+            bool ResT = Reservation(message.ID_VOL, message.ID_HOTEL, message.DATE, message.NOM_UTILISATEUR);
 
 
             //Transaction OK

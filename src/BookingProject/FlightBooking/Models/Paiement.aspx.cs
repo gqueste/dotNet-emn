@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FlightBooking.ServiceCommandes;
 
 namespace FlightBooking.Models
 {
@@ -56,7 +57,8 @@ namespace FlightBooking.Models
             commande.Client = client;
             commande.Payee = true;
 
-            //TODO: Appeler ici le service de création d'une commande
+            var serviceCommandes = new ServiceCommandes.WSCommandes();
+            serviceCommandes.reservation(commande.Vol.idVol, commande.Hotel.idHotel, DateTime.Now, commande.Client.Nom + " " + commande.Client.Prenom);
 
             Response.Redirect(Routing.getStateUrl(Routing.State.CONFIRMATION_RESERVATION), true);
         }

@@ -6,12 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FlightBooking.ServiceHotels;
 
 namespace FlightBooking.Models
 {
     public partial class SelectionHotel : System.Web.UI.Page
     {
-        protected Hotel[] hotels;
+        protected resHotel[] hotels;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,43 +24,12 @@ namespace FlightBooking.Models
             {
                 var vol = FlightBookingContext.get(this).Commande.Vol;
                 
-                // ------- CODE A DECOMENTER POUR L'INTERFACAGE (devrait fonctionner) -----
-                //
-                // var serviceHotels = new ServiceHotels.WSHotels();
-                // hotels = serviceHotels.getHotelsDisponibles(vol.villeArrivee);
-                //
+                var serviceHotels = new ServiceHotels.WSHotels();
+                hotels = serviceHotels.getHotelsDisponibles(vol.villeArrivee);
+                
 
                 lblDate.Text = vol.dateVol.AddHours(vol.duree).ToShortDateString();
                 lblVilleArrivee.Text = vol.villeArrivee;
-
-                // ---------- DEBUT CODE A SUPPRIMER QUAND INTERFACAGE REALISE ----------
-
-                Hotel h1 = new Hotel()
-                {
-                    idHotel = 1,
-                    nomHotel = "Le Nouillorquais",
-                    descriptionHotel = "Petit hôtel de charme",
-                    ville = "New-York"
-                };
-
-                Hotel h2 = new Hotel()
-                {
-                    idHotel = 2,
-                    nomHotel = "RoyalHotel",
-                    descriptionHotel = "Luxury hotel",
-                    ville = "New-York"
-                };
-
-                Hotel h3 = new Hotel()
-                {
-                    idHotel = 3,
-                    nomHotel = "the Average",
-                    descriptionHotel = "Low cost hotel",
-                    ville = "New-York"
-                };
-                hotels = new Hotel[] { h1, h2, h3 };
-
-                // --------------- FIN CODE A SUPPRIMER ----------------------------------
 
                 if (hotels != null && hotels.Length > 0)
                 {

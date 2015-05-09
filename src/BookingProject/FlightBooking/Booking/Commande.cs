@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using FlightBooking.ServiceHotels;
 
 namespace FlightBooking.Booking
 {
@@ -12,7 +13,7 @@ namespace FlightBooking.Booking
 
         public resVol Vol  { get; set; }
 
-        public Hotel Hotel { get; set; }
+        public resHotel Hotel { get; set; }
 
         public Client Client { get; set; }
 

@@ -32,5 +32,25 @@ namespace FlightBooking.Properties {
                 return ((string)(this["FlightBooking_ServiceVols_WSVols"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:54932/WSHotels.asmx")]
+        public string FlightBooking_ServiceHotels_WSHotels {
+            get {
+                return ((string)(this["FlightBooking_ServiceHotels_WSHotels"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:54933/WSCommandes.asmx")]
+        public string FlightBooking_ServiceCommandes_WSCommandes {
+            get {
+                return ((string)(this["FlightBooking_ServiceCommandes_WSCommandes"]));
+            }
+        }
     }
 }
