@@ -31,13 +31,13 @@ namespace FlightBooking.Models {
         protected global::System.Web.UI.WebControls.Label lblNomVol;
         
         /// <summary>
-        /// Contrôle lblCompanie.
+        /// Contrôle lblCompagnie.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCompanie;
+        protected global::System.Web.UI.WebControls.Label lblCompagnie;
         
         /// <summary>
         /// Contrôle lblDateVol.
@@ -76,6 +76,15 @@ namespace FlightBooking.Models {
         protected global::System.Web.UI.WebControls.Label lblVilleArrivee;
         
         /// <summary>
+        /// Contrôle btnModifierVol.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModifierVol;
+        
+        /// <summary>
         /// Contrôle lblNomHotel.
         /// </summary>
         /// <remarks>
@@ -101,6 +110,15 @@ namespace FlightBooking.Models {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVilleHotel;
+        
+        /// <summary>
+        /// Contrôle btnModifierHotel.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModifierHotel;
         
         /// <summary>
         /// Contrôle btnAnnuler.

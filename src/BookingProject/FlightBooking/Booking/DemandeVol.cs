@@ -8,9 +8,9 @@ namespace FlightBooking.Booking
     public class DemandeVol
     {
 
-        public String villeDepart { get; set; }
-        public String villeArrivee { get; set; }
-        public DateTime dateDepart { get; set; }
+        public String VilleDepart { get; set; }
+        public String VilleArrivee { get; set; }
+        public DateTime DateDepart { get; set; }
 
     }
 }

@@ -11,7 +11,9 @@ namespace FlightBooking
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            bool hasCommand = FlightBookingContext.get(this).Commande != null;
+
+            this.lblPanier.Text = "Mon Panier" + (hasCommand ? "(1)" : "(0)");
         }
     }
 }

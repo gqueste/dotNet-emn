@@ -13,38 +13,38 @@ namespace FlightBooking.Models
     public partial class SelectionVol : System.Web.UI.Page
     {
 
-        List<resVol> vols = new List<resVol>();
+        protected resVol[] vols;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            DemandeVol demande = Session["demandeVol"] as DemandeVol;
-            if (demande != null)
+            if (Routing.needRedirect(this, Routing.State.SELECTION_VOL))
             {
-                ServiceVols.WSVols serVols = new ServiceVols.WSVols();
-                vols = serVols.getVolsDisponibles(demande.villeDepart, demande.villeArrivee, demande.dateDepart).ToList<resVol>();
-                lblDemandeDate.Text = demande.dateDepart.ToShortDateString();
-                lblVilleDepart.Text = demande.villeDepart;
-                lblVilleArrivee.Text = demande.villeArrivee;
-                lblDemandeDate.Visible = true;
-                lblVilleDepart.Visible = true;
-                lblVilleArrivee.Visible = true;
+                Response.Redirect(Routing.getRedirect(this), true);
             }
             else
             {
-                Response.Redirect("~/", true);
-            }
-
-            GridView1.DataSource = vols;
-            GridView1.DataBind();
+                var demande = FlightBookingContext.get(this).Commande.Demande;
+                var serviceVols = new ServiceVols.WSVols();
+              
+                vols = serviceVols.getVolsDisponibles(demande.VilleDepart, demande.VilleArrivee, demande.DateDepart);
+                
+                lblDemandeDate.Text = demande.DateDepart.ToShortDateString();
+                lblVilleDepart.Text = demande.VilleDepart;
+                lblVilleArrivee.Text = demande.VilleArrivee;
+                GridView1.DataSource = vols;
+                GridView1.DataBind();
+            } 
         }
 
         protected void lnkView2_Click(object sender, EventArgs e)
         {
             GridViewRow grdrow = (GridViewRow)((LinkButton)sender).NamingContainer;
-            resVol vol = this.vols[grdrow.DataItemIndex];
-            Session["selectionVol"] = vol;
-            Response.Redirect("~/Models/SelectionHotel.aspx");
+
+            var commande = FlightBookingContext.get(this).Commande;
+            commande.Vol = this.vols[grdrow.DataItemIndex];
+        
+            Response.Redirect(Routing.getStateUrl(Routing.State.SELECTION_HOTEL), true);
         }
     }
 }

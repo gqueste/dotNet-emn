@@ -13,10 +13,12 @@ namespace FlightBooking
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (Routing.needRedirect(this, Routing.State.SAISIE_DEMANDE))
             {
-
-                
+                Response.Redirect(Routing.getRedirect(this), true);
+            }
+            else if (!this.IsPostBack)
+            {
                 ServiceVols.WSVols serVols = new ServiceVols.WSVols();
                 var villesDepart = serVols.getVillesDepart();
                 var villesArrivee = serVols.getVillesArrivee();
@@ -31,16 +33,11 @@ namespace FlightBooking
 
                 this.Calendar.SelectedDate = this.Calendar.TodaysDate;
                 this.Calendar.DataBind();
-
             }
-          
-
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
             this.ListBox2.DataBind();
             this.ListBox1.DataBind();
             String depart = ListBox1.SelectedValue;
@@ -59,14 +56,21 @@ namespace FlightBooking
 
         protected void btnConfirmer_Click(object sender, EventArgs e)
         {
-            var demande = new DemandeVol() {
-                dateDepart = Calendar.SelectedDate,
-                villeDepart =ListBox1.SelectedValue,
-                villeArrivee = ListBox2.SelectedValue
+            var demande = new DemandeVol()
+            {
+                DateDepart = Calendar.SelectedDate,
+                VilleDepart = ListBox1.SelectedValue,
+                VilleArrivee = ListBox2.SelectedValue
             };
 
-            Session.Add("demandeVol", demande);
-            Response.Redirect("~/Models/SelectionVol.aspx", true);
+            var commande = new Commande() 
+            { 
+                Demande = demande
+            };
+
+            FlightBookingContext.get(this).Commande = commande;
+
+            Response.Redirect(Routing.getStateUrl(Routing.State.SELECTION_VOL), true);
         }
     }
 }

@@ -4,9 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <h2> Votre recherche :</h2>
     <div class="container" style="border: solid 1px;">
-        Date d'arrivée: <asp:Label ID ="lblDate" runat="server" visible ="false"/>
+        Date d'arrivée: <asp:Label ID ="lblDate" runat="server"/>
         <br />
-        Ville d'arrivee: <asp:Label ID="lblVilleArrivee" runat="server" Visible="false" />
+        Ville d'arrivee: <asp:Label ID="lblVilleArrivee" runat="server"/>
     </div>
     <h2>Résultats :</h2>
 

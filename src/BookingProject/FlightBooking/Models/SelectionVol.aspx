@@ -6,11 +6,11 @@
 
     <h2> Votre recherche :</h2>
     <div class="container" style="border: solid 1px;">
-        Date de départ: <asp:Label ID ="lblDemandeDate" runat="server" visible ="false"/>
+        Date de départ: <asp:Label ID ="lblDemandeDate" runat="server"/>
         <br />
-        Ville de départ: <asp:Label ID="lblVilleDepart" runat="server" Visible="false" />
+        Ville de départ: <asp:Label ID="lblVilleDepart" runat="server"/>
         <br />
-        Ville d'arrivee: <asp:Label ID="lblVilleArrivee" runat="server" Visible="false" />
+        Ville d'arrivee: <asp:Label ID="lblVilleArrivee" runat="server" />
     </div>
     <h2>Résultats :</h2>
 

@@ -61,16 +61,4 @@
             </a>
         </div><!-- /.carousel-rounded-content -->
     </div><!-- /.carousel -->
-    
-
-    <!-- Main component for a primary marketing message or call to action -->
-
-
-    <form id="form1" runat="server">
-        <p class="lead">La page par défault</p>
-        <div>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        </div>
-    </form>
 </asp:Content>
