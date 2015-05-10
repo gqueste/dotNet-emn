@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3647315-B36A-40E2-9B79-846A41297B99}</ProjectGuid>
+    <ProjectGuid>{E2D2C16F-0364-4945-BDA8-B8E35C69137B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>lib_Commandes</RootNamespace>
-    <AssemblyName>lib_Commandes</AssemblyName>
+    <RootNamespace>lib_CmdHotels</RootNamespace>
+    <AssemblyName>lib_CmdHotels</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,13 +34,12 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>lib_Commandes.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>lib_CmdHotels.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,21 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsCommandes.cs" />
+    <Compile Include="clsCmdHotels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="lib_Commandes.snk" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\lib_CmdHotels\lib_CmdHotels.csproj">
-      <Project>{e2d2c16f-0364-4945-bda8-b8e35c69137b}</Project>
-      <Name>lib_CmdHotels</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\lib_CmdVols\lib_CmdVols.csproj">
-      <Project>{aaab0e75-1421-4d1e-a385-45bec62508d1}</Project>
-      <Name>lib_CmdVols</Name>
-    </ProjectReference>
+    <None Include="lib_CmdHotels.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,6 +7,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.EnterpriseServices;
 using System.Messaging;
+using lib_CmdVols;
+using lib_CmdHotels;
 
 namespace lib_Commandes
 {
@@ -14,8 +16,6 @@ namespace lib_Commandes
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsCommandes: ServicedComponent
     {
-        private string ConnectionVols = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=CMDVOLS;Integrated Security=True";
-        private string ConnectionHotels = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=CMDHOTELS;Integrated Security=True";
 
         [AutoComplete]
         public void reservation(int idVol, int idHotel, DateTime date, String nomUtilisateur)
@@ -34,39 +34,15 @@ namespace lib_Commandes
         [AutoComplete]
         public void reserveVol(int idVol, DateTime date, String nomUtilisateur)
         {
-            SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = ConnectionVols;
-            MyConnection.Open();
-            SqlCommand MyCommand = new SqlCommand("sp_reservation_vol", MyConnection);
-            MyCommand.CommandType = CommandType.StoredProcedure;
-            MyCommand.Parameters.Add("@ID_VOL", SqlDbType.VarChar);
-            MyCommand.Parameters["@ID_VOL"].Value = idVol;
-            MyCommand.Parameters.Add("@DATE", SqlDbType.DateTime);
-            MyCommand.Parameters["@DATE"].Value = date;
-            MyCommand.Parameters.Add("@NOM_UTILISATEUR", SqlDbType.VarChar);
-            MyCommand.Parameters["@NOM_UTILISATEUR"].Value = nomUtilisateur;
-
-            MyCommand.ExecuteScalar();
-            MyConnection.Close();
+            clsCmdVols cmdVols = new clsCmdVols();
+            cmdVols.reserveVol(idVol, date, nomUtilisateur);
         }
 
         [AutoComplete]
         public void reserveHotel(int idHotel, DateTime date, String nomUtilisateur)
         {
-            SqlConnection MyConnection = new SqlConnection();
-            MyConnection.ConnectionString = ConnectionHotels;
-            MyConnection.Open();
-            SqlCommand MyCommand = new SqlCommand("sp_reservation_hotel", MyConnection);
-            MyCommand.CommandType = CommandType.StoredProcedure;
-            MyCommand.Parameters.Add("@ID_HOTEL", SqlDbType.VarChar);
-            MyCommand.Parameters["@ID_HOTEL"].Value = idHotel;
-            MyCommand.Parameters.Add("@DATE", SqlDbType.DateTime);
-            MyCommand.Parameters["@DATE"].Value = date;
-            MyCommand.Parameters.Add("@NOM_UTILISATEUR", SqlDbType.VarChar);
-            MyCommand.Parameters["@NOM_UTILISATEUR"].Value = nomUtilisateur;
-
-            MyCommand.ExecuteScalar();
-            MyConnection.Close();
+            clsCmdHotels cmdHotels = new clsCmdHotels();
+            cmdHotels.reserveHotel(idHotel, date, nomUtilisateur);
         }
     }
 
