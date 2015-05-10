@@ -58,30 +58,48 @@ namespace FlightBooking.Models {
         protected global::System.Web.UI.WebControls.Label lblPanierNonVide;
         
         /// <summary>
-        /// Contrôle lblNomHotel.
+        /// Contrôle lblVilleDepart.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNomHotel;
+        protected global::System.Web.UI.WebControls.Label lblVilleDepart;
         
         /// <summary>
-        /// Contrôle lblDescriptionHotel.
+        /// Contrôle lblVilleArrivee.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescriptionHotel;
+        protected global::System.Web.UI.WebControls.Label lblVilleArrivee;
         
         /// <summary>
-        /// Contrôle lblVilleHotel.
+        /// Contrôle lblEtatCommande.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVilleHotel;
+        protected global::System.Web.UI.WebControls.Label lblEtatCommande;
+        
+        /// <summary>
+        /// Contrôle btnVoirCommande.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVoirCommande;
+        
+        /// <summary>
+        /// Contrôle btnSupprimerCommande.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSupprimerCommande;
     }
 }

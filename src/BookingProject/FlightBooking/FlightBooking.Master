@@ -68,7 +68,7 @@
         </asp:ContentPlaceHolder>
         <hr />
         <footer>
-            <p>&copy; <%: DateTime.Now.Year %> - FlightBooking - EMN/FILA2 : Hadrien GERARD, Damien GOUJARD, Maxime PEROCHEAU, Joris PICHARD, Gabriel QUESTE</p>
+            <p>&copy; <%: DateTime.Now.Year %> - FlightBooking - EMN/FILA2 : Damien GOUJARD, Gabriel QUESTE, Hadrien GERARD, Joris PICHARD, Maxime PEROCHEAU</p>
         </footer>
     </div><!-- /container -->
     

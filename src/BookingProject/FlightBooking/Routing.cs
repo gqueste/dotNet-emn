@@ -32,65 +32,48 @@ namespace FlightBooking
 
         public static bool needRedirect(Page currentPage, State state)
         {
-            var commande = FlightBookingContext.get(currentPage).Commande;
-
             if (state == State.NONE)
             {
                 return false;
             }
-            if (commande == null || commande.Demande == null)
-            {
-                return state != State.SAISIE_DEMANDE;
-            }
-            else if (commande.Vol == null)
-            {
-                return state != State.SELECTION_VOL;
-            }
-            else if (commande.Hotel == null)
-            {
-                return state != State.SELECTION_HOTEL;
-            }
-            else if (!commande.Confirmee)
-            {
-                return state != State.CONFIRMATION_DEMANDE;
-            }
-            else if (!commande.Payee)
-            {
-                return state != State.PAIEMENT;
-            }
             else
             {
-                return state != State.CONFIRMATION_RESERVATION;
+                return state != getCurrentOrNextCommandState(currentPage);
             }
         }
 
         public static String getRedirect(Page currentPage)
         {
+            return getStateUrl(getCurrentOrNextCommandState(currentPage));
+        }
+
+        public static State getCurrentOrNextCommandState(Page currentPage)
+        {
             var commande = FlightBookingContext.get(currentPage).Commande;
 
             if (commande == null || commande.Demande == null)
             {
-                return getStateUrl(State.SAISIE_DEMANDE);
+                return State.SAISIE_DEMANDE;
             }
             else if (commande.Vol == null)
             {
-                return getStateUrl(State.SELECTION_VOL);
+                return State.SELECTION_VOL;
             }
             else if (commande.Hotel == null)
             {
-                return getStateUrl(State.SELECTION_HOTEL);
+                return State.SELECTION_HOTEL;
             }
             else if (!commande.Confirmee)
             {
-                return getStateUrl(State.CONFIRMATION_DEMANDE);
+                return State.CONFIRMATION_DEMANDE;
             }
             else if (!commande.Payee)
             {
-                return getStateUrl(State.PAIEMENT);
+                return State.PAIEMENT;
             }
             else
             {
-                return getStateUrl(State.CONFIRMATION_RESERVATION);
+                return State.CONFIRMATION_RESERVATION;
             }
         }
 

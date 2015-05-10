@@ -18,12 +18,15 @@ namespace FlightBooking.Models
             }
             else
             {
-                var client = FlightBookingContext.get(this).Client;
-                if (client != null)
+                if (!IsPostBack)
                 {
-                    this.tbNomClient.Text = client.Nom ?? "";
-                    this.tbPrenomClient.Text = client.Prenom ?? "";
-                    this.tbMail.Text = client.Email ?? "";
+                    var client = FlightBookingContext.get(this).Client;
+                    if (client != null)
+                    {
+                        this.tbNomClient.Text = client.Nom ?? "";
+                        this.tbPrenomClient.Text = client.Prenom ?? "";
+                        this.tbMail.Text = client.Email ?? "";
+                    }
                 }
             }
         }
@@ -41,13 +44,16 @@ namespace FlightBooking.Models
 
         protected void btnPayer_Click(object sender, EventArgs e)
         {
-            bool emptyFields = String.IsNullOrWhiteSpace(this.tbNomClient.Text) 
-                               || String.IsNullOrWhiteSpace(this.tbPrenomClient.Text)
-                               || String.IsNullOrWhiteSpace(this.tbMail.Text);
+            bool emptyFieldNom = String.IsNullOrWhiteSpace(this.tbNomClient.Text);
+            bool emptyFieldPrenom = String.IsNullOrWhiteSpace(this.tbPrenomClient.Text);
+            bool emptyFieldMail = String.IsNullOrWhiteSpace(this.tbMail.Text);
 
-            if (emptyFields)
+            if (emptyFieldNom || emptyFieldPrenom || emptyFieldMail)
             {
                 this.lblError.Visible = true;
+                this.pnlNomClient.CssClass = emptyFieldNom ? "form-group has-error" : "form-group";
+                this.pnlPrenomClient.CssClass = emptyFieldPrenom ? "form-group has-error" : "form-group";
+                this.pnlEmail.CssClass = emptyFieldMail ? "form-group has-error" : "form-group";
             }
             else
             {

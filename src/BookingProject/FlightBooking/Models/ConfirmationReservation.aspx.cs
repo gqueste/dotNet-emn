@@ -45,7 +45,7 @@ namespace FlightBooking.Models
 
         protected void btnNouvelleReservation_Click(object sender, EventArgs e)
         {
-            var commande = FlightBookingContext.get(this).Commande = null;
+            FlightBookingContext.get(this).Commande = null;
             Response.Redirect(Routing.getStateUrl(Routing.State.SAISIE_DEMANDE), true);
         }
     }
