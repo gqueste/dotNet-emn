@@ -39,6 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -78,10 +80,10 @@
     </Content>
     <None Include="Web References\ServiceCommandes\WSCommandes.wsdl" />
     <None Include="Web References\ServiceHotels\WSHotels.disco" />
-    <Content Include="Web References\ServiceVols\Reference.map">
+    <None Include="Web References\ServiceVols\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web References\ServiceVols\resVol.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>

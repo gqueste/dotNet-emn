@@ -26,7 +26,7 @@ namespace FlightBooking.Models
                 var vol = commande.Vol;
                 lblIdVol.Text = vol.idVol.ToString();
                 lblNomVol.Text = vol.nomVol;
-                lblCompagnie.Text = vol.companie;
+                lblCompagnie.Text = vol.compagnie;
                 lblDateVol.Text = vol.dateVol.ToShortDateString();
                 lblDuree.Text = vol.duree + " heures";
                 lblVilleDepart.Text = vol.villeDepart;
