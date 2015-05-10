@@ -27,9 +27,7 @@ namespace LireMSMQ
 
             try
             {
-                myC.reserveVol(Convert.ToInt16(idVol), Convert.ToDateTime(date), Convert.ToString(nomUtilisateur));
-                myC.reserveHotel(Convert.ToInt16(idHotel), Convert.ToDateTime(date), Convert.ToString(nomUtilisateur));
-          
+                myC.reservation(Convert.ToInt32(idVol), Convert.ToInt16(idHotel), Convert.ToDateTime(date), Convert.ToString(nomUtilisateur));          
             }
             catch (SystemException error)
             {
@@ -46,7 +44,7 @@ namespace LireMSMQ
         {
             //ouverture de la file MSMQ
             MessageQueue MyMQ = new MessageQueue(@".\private$\flightBooking");
-            //récupération sans vider la file d'un message, de type TransfertInfo
+            //récupération sans vider la file d'un message, de type TransfertInfo          
             MyMQ.Formatter = new XmlMessageFormatter(new Type[] { typeof(ReservationInfo) });
 
             var message = (ReservationInfo)MyMQ.Peek().Body;

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.EnterpriseServices;
-using System.Messaging;
 using lib_CmdVols;
 using lib_CmdHotels;
 
@@ -20,26 +19,17 @@ namespace lib_Commandes
         [AutoComplete]
         public void reservation(int idVol, int idHotel, DateTime date, String nomUtilisateur)
         {
-            ReservationInfo transfert = new ReservationInfo();
-            transfert.ID_VOL = idVol.ToString();
-            transfert.ID_HOTEL = idHotel.ToString();
-            transfert.DATE = date.ToString();
-            transfert.NOM_UTILISATEUR = nomUtilisateur;
-
-            MessageQueue MyMQ = new MessageQueue(@".\private$\flightBooking");
-            MyMQ.Send(transfert, "Transfert FlightBooking");
-            MyMQ.Close();
+            reserveVol(idVol, date, nomUtilisateur);
+            reserveHotel(idHotel, date, nomUtilisateur);
         }
 
-        [AutoComplete]
-        public void reserveVol(int idVol, DateTime date, String nomUtilisateur)
+        private void reserveVol(int idVol, DateTime date, String nomUtilisateur)
         {
             clsCmdVols cmdVols = new clsCmdVols();
             cmdVols.reserveVol(idVol, date, nomUtilisateur);
         }
 
-        [AutoComplete]
-        public void reserveHotel(int idHotel, DateTime date, String nomUtilisateur)
+        private void reserveHotel(int idHotel, DateTime date, String nomUtilisateur)
         {
             clsCmdHotels cmdHotels = new clsCmdHotels();
             cmdHotels.reserveHotel(idHotel, date, nomUtilisateur);
@@ -52,6 +42,5 @@ namespace lib_Commandes
         public String ID_HOTEL { get; set; }
         public String DATE { get; set; }
         public String NOM_UTILISATEUR { get; set; }
-        
     }
 }

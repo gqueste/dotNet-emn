@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using lib_Commandes;
+using System.Messaging;
 
 namespace serviceCommandes
 {
@@ -28,7 +29,15 @@ namespace serviceCommandes
         [WebMethod]
         public void reservation(int idVol, int idHotel, DateTime date, string nomUtilisateur)
         {
-            this.commandes.reservation(idVol,idHotel,date,nomUtilisateur);
+            ReservationInfo transfert = new ReservationInfo();
+            transfert.ID_VOL = idVol.ToString();
+            transfert.ID_HOTEL = idHotel.ToString();
+            transfert.DATE = date.ToString();
+            transfert.NOM_UTILISATEUR = nomUtilisateur;
+
+            MessageQueue MyMQ = new MessageQueue(@".\private$\flightBooking");
+            MyMQ.Send(transfert, "Transfert FlightBooking");
+            MyMQ.Close();
         }
     }
 }
