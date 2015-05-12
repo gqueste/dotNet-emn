@@ -8,11 +8,10 @@
         <table class="table">
             <tbody>
                 <tr><td><strong>Damien GOUJARD</strong></td><td><a href="mailto:Damien.Goujard@etudiant.mines-nantes.fr"> Damien.Goujard@etudiant.mines-nantes.fr</a></td></tr>
-                <tr><td><strong>Gabriel QUEST</strong></td><td><a href="mailto:Gabriel.Quest@etudiant.mines-nantes.fr"> Gabriel.Quest@etudiant.mines-nantes.fr</a></td></tr>
+                <tr><td><strong>Gabriel QUESTE</strong></td><td><a href="mailto:Gabriel.Queste@etudiant.mines-nantes.fr"> Gabriel.Queste@etudiant.mines-nantes.fr</a></td></tr>
                 <tr><td><strong>Hadrien GERARD</strong></td><td><a href="mailto:Hadrien.Gerard@etudiant.mines-nantes.fr"> Hadrien.Gerard@etudiant.mines-nantes.fr</a></td></tr>
                 <tr><td><strong>Joris PICHARD</strong></td><td><a href="mailto:Joris.Pichard@etudiant.mines-nantes.fr">Joris.Pichard@etudiant.mines-nantes.fr</a></td></tr>
                 <tr><td><strong>Maxime PEROCHEAU</strong></td><td><a href="mailto:Maxime.Perocheau@etudiant.mines-nantes.fr">Maxime.Perocheau@etudiant.mines-nantes.fr</a></td></tr>
-                
             </tbody>
         </table>
     </address>

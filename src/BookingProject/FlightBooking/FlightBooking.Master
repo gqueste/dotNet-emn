@@ -37,14 +37,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" rel="home" href="/" title="FlightBooking">
-                            <img style="max-width: 32px; margin-top: -7px;" src="/Assets/Icon.png" alt="" />
+                        <a class="navbar-brand" rel="home" runat="server" href="~/" title="FlightBooking">
+                            <img style="max-width: 32px; margin-top: -7px;" runat="server" src="~/Assets/Icon.png" alt="" />
                         </a>
-                        <a class="navbar-brand" runat="server" href="/">FlightBooking</a>
+                        <a class="navbar-brand" runat="server" href="~/">FlightBooking</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a runat="server" href="/">Accueil</a></li>
+                            <li><a runat="server" href="~/">Accueil</a></li>
                             <li><a runat="server" href="~/Models/Travel.aspx">Réservations</a></li>
                             <li><a runat="server" href="~/Models/Contact.aspx">A propos</a></li>
                         </ul>
